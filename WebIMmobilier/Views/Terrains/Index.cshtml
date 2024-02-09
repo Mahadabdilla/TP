@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebIMmobilier.Models.Terrain>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Proprietaire.NomUtil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionBien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuperficieBien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocaliteBien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeTerrain)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proprietaire.NomUtil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionBien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuperficieBien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocaliteBien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeTerrain)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdBien }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdBien }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdBien })
+        </td>
+    </tr>
+}
+
+</table>
